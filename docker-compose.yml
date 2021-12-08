@@ -1,0 +1,23 @@
+version: '3'
+services:
+  report:
+    image: nginx:1.14
+    ports: 
+    - "81:80"
+    volumes:
+    - test-report:/usr/share/nginx/html  
+  test:
+    image: amadosaladino/playwright:v1
+    volumes:
+    - .:/app
+    - test-report:/report
+    - /app/node_modules
+  gallery:
+    image: ghcr.io/linuxserver/photoshow
+    ports:
+      - "82:80"
+    volumes:
+    - ./screenshots:/Pictures:ro
+
+volumes:
+  test-report:

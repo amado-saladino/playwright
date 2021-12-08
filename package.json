@@ -1,0 +1,17 @@
+{
+  "name": "playwright",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "./clean.sh",
+    "test": "npx playwright test"
+  },
+  "keywords": [],
+  "author": "Ahmed Salah",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.17.1",
+    "playwright": "^1.17.0"
+  }
+}
