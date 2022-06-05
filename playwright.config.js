@@ -3,11 +3,14 @@ const config = {
     ,['list'] ],
     timeout: 60000,
     testDir: 'tests',
+    workers: 2,
+    fullyParallel: true,
     use: {
         headless: true,
         locale : "en-uk",
         screenshot: 'only-on-failure',
-        video: 'retain-on-failure'
+        video: 'retain-on-failure',
+        trace: 'retain-on-failure'
     }
 }
 

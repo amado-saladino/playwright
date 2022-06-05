@@ -26,6 +26,12 @@ npx playwright test tests/todo-page/ tests/landing-page/
 npx playwright codegen google.de
 ```
 
+## Viewing the trace
+
+```
+npx playwright show-trace trace.zip
+```
+
 ## Container
 
 ```shell
