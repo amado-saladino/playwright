@@ -5,7 +5,7 @@ test.describe('devices test',()=>{
         const iPhone = devices['iPhone 11']
         const browser = await chromium.launch()
         const context = await browser.newContext({
-            ...devices,
+            ...iPhone,
             permissions: ['geolocation'],
             geolocation: { longitude: 21.4226727, latitude: 39.826123 },
             locale: 'ar-EG'
