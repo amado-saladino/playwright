@@ -6,6 +6,7 @@ const config = {
     workers: 2,
     fullyParallel: true,
     use: {
+        actionTimeout: 30 * 1000,
         headless: true,
         locale : "en-uk",
         screenshot: 'only-on-failure',

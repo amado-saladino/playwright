@@ -13,5 +13,6 @@ test.describe('devices test',()=>{
 
         const page = await context.newPage()
         await page.goto('https://www.google.com/maps')
+        await context.close()
     })
 })

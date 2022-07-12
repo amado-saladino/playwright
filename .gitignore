@@ -1,5 +1,6 @@
 node_modules/
 playwright-report
 screenshots/*
-test-results/*
+test-results/
+video/
 !.gitkeep
