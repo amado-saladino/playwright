@@ -30,4 +30,8 @@ test.describe('heroku app test',()=>{
         console.log(await page.title())
         console.log(await page.url())
     })
+
+    test.afterAll(async ({browser})=> {
+        await page.close()
+    })
 })
