@@ -1,15 +1,19 @@
 const { test, expect } = require('@playwright/test')
+const {faker} = require('@faker-js/faker')
 
 /**
  * runs all tests in the same browser context
  */
 test.describe('heroku app test',()=>{
     let page
+    const rnd = `Random is: ${faker.random.numeric(5)}`
     test.beforeAll(async ({ browser })=>{
         page = await browser.newPage()
+        console.log(rnd)
     })
 
     test('open home page', async () =>{
+        console.log(rnd)
         await page.goto('https://the-internet.herokuapp.com/')
         const link = page.locator('text=Challenging DOM')
         await expect(link).toBeVisible()
@@ -18,6 +22,7 @@ test.describe('heroku app test',()=>{
     })
 
     test('challenging dom',async ()=>{
+        console.log(rnd)
         const header = await (await page.$('h3')).innerText()
         console.log(header)
     
@@ -31,7 +36,7 @@ test.describe('heroku app test',()=>{
         console.log(await page.url())
     })
 
-    test.afterAll(async ({browser})=> {
+    test.afterAll(async ()=> {
         await page.close()
     })
 })
